@@ -1,5 +1,6 @@
 x-clickhouse-defaults: &clickhouse-defaults
   restart: unless-stopped
+  # image: clickhouse/clickhouse-server:26.3.4
   image: clickhouse/clickhouse-server:latest
   logging:
     driver: "json-file"
@@ -8,6 +9,9 @@ x-clickhouse-defaults: &clickhouse-defaults
         max-file: "5"
   networks:
     - datalake-net
+  environment:
+    CLICKHOUSE_DEFAULT_PASSWORD: ${CLICKHOUSE_DEFAULT_PASSWORD:-''}
+    CLICKHOUSE_ADMIN_PASSWORD: ${CLICKHOUSE_ADMIN_PASSWORD:-data123}
   depends_on:
     - clickhouse-keeper
   ulimits:

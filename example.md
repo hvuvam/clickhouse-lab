@@ -134,7 +134,7 @@ PARTITION BY toYYYYMM(order_date)
 ORDER BY (customer_id, order_date, order_id)
 TTL order_date + INTERVAL 3 YEAR DELETE          -- xóa data > 3 năm
 SETTINGS
-    storage_policy = 'hot_cold',
+    -- storage_policy = 'hot_cold',
     index_granularity = 8192,
     min_bytes_for_wide_part = 10485760;           -- 10 MB: part nhỏ dùng compact format
 ```

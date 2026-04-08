@@ -5,7 +5,8 @@
     <listen_try>1</listen_try>
 
     <logger>
-        <level>error</level>
+        <!-- <level>error</level> -->
+        <level>trace</level>
         <console>1</console>
     </logger>
 </clickhouse>

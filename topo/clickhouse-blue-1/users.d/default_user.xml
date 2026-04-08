@@ -1,11 +1,12 @@
 <clickhouse>
     <users>
-        <default>
+        <default>            
+            <password from_env="CLICKHOUSE_DEFAULT_PASSWORD" />
             <!-- Default settings -->
-            <!-- #15G for each of the instance -->
-            <max_bytes_before_external_group_by>16061273600</max_bytes_before_external_group_by>
-            <!-- #20G -->
-            <max_memory_usage>21474836480</max_memory_usage>
+            <!-- #5G for each of the instance -->
+            <max_bytes_before_external_group_by>5368709120</max_bytes_before_external_group_by>
+            <!-- #10G -->
+            <max_memory_usage>10737418240</max_memory_usage>
             <use_uncompressed_cache>0</use_uncompressed_cache>
             <load_balancing>in_order</load_balancing>
             <!-- <log_queries>1</log_queries> -->
@@ -20,7 +21,7 @@
             <show_named_collections_secrets>1</show_named_collections_secrets>
         </default>
         <admin>
-            <password>data123</password>
+            <password from_env="CLICKHOUSE_ADMIN_PASSWORD" />
             <profile>default</profile>
             <!-- <networks>
                 <ip>::/0</ip>

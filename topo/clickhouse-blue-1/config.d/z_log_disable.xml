@@ -5,14 +5,14 @@
     <part_log remove="1"/>
     <session_log remove="1"/>
     <text_log remove="1" />
-    <trace_log remove="1"/>
-    <crash_log remove="1"/>
+    <trace_log remove="0"/>
+    <crash_log remove="0"/>
     <opentelemetry_span_log remove="1"/>
-    <zookeeper_log remove="1"/>
-    <processors_profile_log remove="1"/>
+    <zookeeper_log remove="0"/>
+    <processors_profile_log remove="0"/>
     <!-- logs added in CH 23.7+ -->
-    <error_log remove="1"/>
-    <backup_log remove="1"/>
+    <error_log remove="0"/>
+    <backup_log remove="0"/>
     <blob_storage_log remove="1"/>
     <s3queue_log remove="1"/>
 </clickhouse>
