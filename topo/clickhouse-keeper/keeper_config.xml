@@ -8,6 +8,10 @@
   Data stored in: /var/lib/clickhouse-keeper  (mapped via docker volume)
 -->
 <clickhouse>
+    <!-- Write preprocessed config to the data volume (writable) instead of
+         the bind-mounted config dir (read-only from container's perspective) -->
+    <preprocessed_configurations_path>/var/lib/clickhouse-keeper/</preprocessed_configurations_path>
+
     <keeper_server>
         <tcp_port>9181</tcp_port>
         <server_id>3</server_id>

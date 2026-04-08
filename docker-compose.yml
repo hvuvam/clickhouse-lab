@@ -75,7 +75,8 @@ services:
       - type: volume
         source: ch-keeper-data
         target: /var/lib/clickhouse-keeper
-      - "./topo/clickhouse-keeper:/etc/clickhouse-keeper"
+      # - "./topo/clickhouse-keeper:/etc/clickhouse-keeper"
+      - "./topo/clickhouse-keeper/keeper_config.xml:/etc/clickhouse-keeper/keeper_config.xml"
 
 networks:
   datalake-net:
