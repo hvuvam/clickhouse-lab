@@ -76,7 +76,8 @@ services:
 
 networks:
   datalake-net:
-    external: true
+    driver: bridge
+    # external: true
 
 volumes:
   ch-blue-1-data:
