@@ -1,5 +1,3 @@
-version: "3.7"
-
 x-clickhouse-defaults: &clickhouse-defaults
   restart: unless-stopped
   image: clickhouse/clickhouse-server:latest
