@@ -1,3 +1,7 @@
+## Network
+
+`docker network create datalake-net`
+
 ## Architecture
 
 **2-node ClickHouse cluster (1 shard, 2 replicas — zero-shard design)**
@@ -75,3 +79,6 @@ echo ruok | nc 127.0.0.1 9181   # blue-1 keeper
 echo ruok | nc 127.0.0.1 9182   # blue-2 keeper
 echo ruok | nc 127.0.0.1 9183   # standalone keeper
 ```
+
+docker exec clickhouse-blue-1 bash -c "nc -zv clickhouse-blue-2 9234 && echo OK"
+docker exec clickhouse-blue-1 bash -c "nc -zv clickhouse-keeper 9234 && echo OK"

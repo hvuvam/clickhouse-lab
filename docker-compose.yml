@@ -8,6 +8,8 @@ x-clickhouse-defaults: &clickhouse-defaults
         max-file: "5"
   networks:
     - datalake-net
+  depends_on:
+    - clickhouse-keeper
   ulimits:
     nproc: 65535
     nofile:
@@ -24,6 +26,7 @@ services:
       - 9900:9000
       - 8123:8123
       - 9181:9181   # ClickHouse Keeper (Raft quorum member id=1)
+    
     volumes:
       - type: volume
         source: ch-blue-1-data
@@ -76,8 +79,8 @@ services:
 
 networks:
   datalake-net:
-    driver: bridge
-    # external: true
+    # driver: bridge
+    external: true
 
 volumes:
   ch-blue-1-data:
