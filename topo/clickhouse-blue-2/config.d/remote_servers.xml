@@ -1,0 +1,32 @@
+<clickhouse>
+    <remote_servers>
+        <!-- 1 shard, 2 replicas — zero-shard design (no horizontal partitioning) -->
+        <cluster_1s2r>
+            <shard>
+                <internal_replication>true</internal_replication>
+                <replica>
+                    <host>clickhouse-blue-1</host>
+                    <port>9000</port>
+                </replica>
+                <replica>
+                    <host>clickhouse-blue-2</host>
+                    <port>9000</port>
+                </replica>
+            </shard>
+        </cluster_1s2r>
+        <!-- catalog_cluster: all nodes — used for ON CLUSTER DDL -->
+        <catalog_cluster>
+            <shard>
+                <internal_replication>true</internal_replication>
+                <replica>
+                    <host>clickhouse-blue-1</host>
+                    <port>9000</port>
+                </replica>
+                <replica>
+                    <host>clickhouse-blue-2</host>
+                    <port>9000</port>
+                </replica>
+            </shard>
+        </catalog_cluster>
+    </remote_servers>
+</clickhouse>

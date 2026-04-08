@@ -1,0 +1,6 @@
+<clickhouse>
+   <!-- when max_server_memory_usage is set, max_server_memory_usage_to_ram_ratio is ignored -->
+   <max_server_memory_usage>0</max_server_memory_usage>
+   <!-- 2 CH instances on the same host: each gets up to 50% of total RAM -->
+   <max_server_memory_usage_to_ram_ratio>0.5</max_server_memory_usage_to_ram_ratio>
+</clickhouse>
